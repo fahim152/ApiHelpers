@@ -1,0 +1,38 @@
+// To prevent cors error we must allow cors and allow the cross origin by passing required options in allowHeaders param
+// If .pem got any permission error just chmod to user required permission for fullchain.pem / privkey.pem file
+ <---- config start ----> 
+
+{
+	"authHost": "{origin url}",
+	"authEndpoint": "/broadcasting/auth",
+	"clients": [],
+	"database": "redis",
+	"databaseConfig": {
+			"redis": {},
+			"sqlite": {
+					"databasePath": "/database/laravel-echo-server.sqlite"
+			}
+	},
+	"devMode": true,
+	"host": null,
+	"port": "6001",
+	"protocol": "https",
+	"socketio": {},
+	"secureOptions": 67108864,
+	"sslCertPath": "{full path of fullchain.pem}",
+	"sslKeyPath": "{full path of privkey.pem} ",
+	"sslCertChainPath": "",
+	"sslPassphrase": "",
+	"subscribers": {
+			"http": true,
+			"redis": true
+	},
+	"apiOriginAllow": {
+			"allowCors": true,
+			"allowOrigin" : "{origin url}",
+			"allowMethods": "GET, POST",
+			"allowHeaders": "Access-Control-Allow-Methods, Access-Control-Allow-Header, Access-Control-Allow-Origin, Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
+	}
+}
+
+<--- config end -->
